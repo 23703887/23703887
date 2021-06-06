@@ -62,6 +62,27 @@ public class Game {
 
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
+        // Add new content in the game
+        magnusShield = new Item("magnusShield", "The exotic shield", 100);
+        magnusDagger = new Item("magnusDagger", "The exotic Dagger", 100);
+        magnusPotion = new Item("magnusPotion", "The royal Health formula", 50.50);
+        mainDoorkey1 = new Item("mainDoorkey1", "To open the main door of sub-castle", 100);
+        frontGatekey2 = new Item("frontGatekey2", "To open the frontgate of sub-castle", 100);
+        backDoorkey3 = new Item("backDoorkey3", "To Open the backdoor of sub-castle", 100);
+        subCastle = Room("Sub-Castle", "Castle within a castle, isn't that amazing?",TRUE);
+
+        // Set the subcastle exit
+        subCastle.setExit("west", rooms.getRoom("kitchen"))
+        subCastle.addItemInRoom(magnusShield)
+        subCastle.addItemInRoom(magnusDagger)
+        subCastle.addItemInRoom(magnusPotion)
+        subCastle.addItemInRoom(mainDoorkey1)
+        subCastle.addItemInRoom(frontGatekey2)
+        subCastle.addItemInRoom(backDoorkey3)
+
+        // add room in the game
+        rooms.addRoom(subCastle)
+        
         boolean finished = false;
         while (!finished) {
             long currentTime = System.currentTimeMillis();
@@ -193,12 +214,7 @@ public class Game {
             System.out.println("You can't take nothing, no?");
         } else {
             // Do the transaction here
-            currentRoom.removeItemInRoom(currentItem);
             player.addItemInventory(currentItem);
-
-            //roomItem.remove(currentItem);
-            //addItemInventory(currentItem);
-            //System.out.println(currentRoom.getLongDescription());
         }
     }
     
@@ -221,11 +237,6 @@ public class Game {
         } else {
             // Do the transaction here
             player.removeItemInventory(currentItem);
-            currentRoom.addItemInRoom(currentItem);
-
-            //removeItemInventory(currentItem);
-            //roomItem.put(currentItem, currentRoom);
-            //System.out.println(currentRoom.getLongDescription());
         }
     }
 
