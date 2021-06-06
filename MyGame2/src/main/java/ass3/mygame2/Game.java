@@ -264,20 +264,9 @@ public class Game {
         if (currentItem == null) {
             System.out.println("You can't use nothing, no?");
         } else {
-            // you want make sure that the currentRoom is the room where you want to open the door (before the nextdoor).
-            // you want to make sure the currentItem matches the key to open the next door.
-
-            //if(currentRoom.getName().equals("castle") && currentItem.getName().equals("key")){
-            //.setLockedStatus(false);
+            
+            currentRoom.removeItemInRoom(currentItem);
             System.out.println("You just used the " + currentItem.getName());
-
-            //if(currentRoom.getName().equals("frontYard") && currentItem.getName().equals("item1")){
-            //frontGate.setLockedStatus(false);
-            // if(currentRoom.getName().equals("castle")){
-            // //currentRoom.checkRoom("castle");
-            // roomKey.get(currentItem).setLockedStatus(false);
-            // }
-            System.out.println("You cannot use this item here");
 
         }
 
