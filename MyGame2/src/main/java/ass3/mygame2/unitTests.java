@@ -57,7 +57,7 @@ public class UnitTest extends TestCase {
    }
 
     /**
-    * 6 - Test method to test the room set
+    * 6 - Test method to test the room set method
     */
     public void testRoomSet(){
         subCastle = new Room("subcastle", "You are at the subcastle", false);
