@@ -1,20 +1,43 @@
 package ass3.mygame2;
 
+/**
+ * This class is part of the "World of Zuul" application. 
+ * "World of Zuul" is a very simple, text based adventure game.  
+ * 
+ * This class holds information about the list of rooms that will be created in the game
+ * The list can contain rooms.
+ * 
+ * The way it is used: Whatever room is created in the game, it is added in the RoomCreation List
+ * The list maintains the lifecycle of rooms that will be in the game.
+ * This list serves a global room collection purpose for the game's environment.
+ * 
+ * @author Ritika Saini
+ * @version 1.0
+ */
 
 import java.util.ArrayList;
 
 public class RoomCreation {
 
+    // List to hold the rooms of the game
     private ArrayList<Room> allRoomInGame = new ArrayList();
 
+    // list to hold the items of the rooms
     private ItemCreation itemCreation;
 
+    /**
+     * instantiate the rooms list
+     * creates the item list
+     * calls another method to load some pre-defined rooms
+     */
     public RoomCreation() {
         itemCreation = new ItemCreation();
         createRooms();
     }
     
-    
+    /**
+     * This function loads some predefined rooms in the game environment
+     */
     private void createRooms() {
 
         Room castle, kitchen, frontGate;
@@ -38,6 +61,13 @@ public class RoomCreation {
 
     }
 
+    /**
+     * This function returns the room that is requested by the player
+     * 
+     * @param stringRoom The name of the room that is needed by game
+     * @return roomToReturn if found then the object of room that is needed to be returned
+     *                      if not found then NULL
+     */
     public Room getRoom(String stringRoom) {
         Room roomToReturn = null;
         for (Room room : allRoomInGame) {

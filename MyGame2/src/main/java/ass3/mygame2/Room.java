@@ -5,26 +5,36 @@ import java.util.HashMap;
 import java.util.ArrayList;
 
 /**
- * Write at least 3 sentences!!!!!
+ * This class is part of the "World of Zuul" application. 
+ * "World of Zuul" is a very simple, text based adventure game.  
  * 
- * @author  Michael Kölling and David J. Barnes
- * @version 2016.02.29
+ * This class holds information about the rooms that will be involve in the game
+ * A room can contain room name, description, locked information, existence map, items of room and mapping of items to the room
+ * 
+ * The way this is used: Rooms are created in the game in order to create an environment for the player.
+ * Room will have a name, description, key and it's mapping with the items.
+ * 
+ * @author Ritika Saini
+ * @version 1.0
  */
 
 public class Room 
 {
+    // variable to hold description of room
     private String description;
-    private String name;
-    private boolean isLocked;
+    private String name; // name of the room
+    private boolean isLocked; // locked information
     private HashMap<String, Room> exits;        // stores exits of this room.
-    private ArrayList<Item> roomItem;
-    private HashMap<Room, Item> roomHashMapItem;
+    private ArrayList<Item> roomItem; // list to hold the items of room
+    private HashMap<Room, Item> roomHashMapItem; // mapping of items to the room
 
     /**
      * Create a room described "description". Initially, it has
      * no exits. "description" is something like "a kitchen" or
      * "an open court yard".
+     * @param name The room's name.
      * @param description The room's description.
+     * @param isLocked room is locked or not.
      */
     public Room(String name, String description, boolean isLocked) 
     {
@@ -65,12 +75,23 @@ public class Room
         return "You are " + description + ".\n" + getExitString() + ".\n" + getAllItems();
     }
 
+    /**
+     * Returns all items of room in the form of:
+     *     You have some.
+     *      items: 
+     * @return A list of items of this room
+     */
     public String getAllItems(){
 
         return "You have some " + listOfItems();
 
     }
 
+    /**
+     * Returns the name of items to the public function in the form of:
+     *     items: itemname 
+     * @return A list of items of this room
+     */
     private String listOfItems(){
 
         String returnString = "items:";
@@ -122,16 +143,29 @@ public class Room
         return itemToReturn;
     }
 
+    /**
+     * Adds the item in the list of items in room
+     * @param item item to be added in the list of items for room.
+     */    
     public void addItemInRoom(Item item){
         roomItem.add(item);
     }
 
+    /**
+     * Removes an item from the list of items of a room
+     * @param item item that is needed to be removed.
+     */
     public void removeItemInRoom(Item item){
         if(roomItem.size() > 0){
             roomItem.remove(item);
         }
     }
 
+    /**
+     * Sets the 1:1 mapping of item with the room
+     * @param room The room which will be assigned to the item
+     * @param item The item that needs to be attached with room
+     */
     public void addHashMapItemInRoom(Room room, Item item){
         roomHashMapItem.put(room, item);
     }
@@ -146,10 +180,18 @@ public class Room
         return isLocked;
     }
 
+    /**
+     * Marks the room as Locked/Unlocked
+     * @param newStatus A boolean value indicating locked/unlocked status.
+     */    
     public void setLockedStatus(boolean newStatus){
         isLocked = newStatus;
     }
-    
+
+    /**
+     * Returns the name of the room
+     * @return name The name of the room.
+     */    
     public String getName(){
         return name;
     }

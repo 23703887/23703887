@@ -10,20 +10,25 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- *
- *
- 
+ * This class is the main driver class of game "World of Zuul"
+ * This class holds all the objects that will be required for gameplay
+ * Game class basically sets up the environment for the game
  */
 
 public class Game {
-
+    // This parser reads user input and tries to interpret it as an "Adventure"
     private Parser parser;
+    // This is the object of player class that will be created for person to play the gamme
     private Player player;
+    // The variable for room from where the game will be started
     private Room currentRoom;
+    // This is a class to hold the environment rooms for the game, basically holds all rooms of the map
     private RoomCreation rooms;
 
+    // logical mapping of items to the rooms through hashmap
     private HashMap<Item, Room> roomItem;
 
+    // mapping of room keys with the rooms
     private HashMap<Item, Room> roomKey;
 
     private int timeCounter; // to count the steps
@@ -41,6 +46,9 @@ public class Game {
         //System.out.println(createRoom.getcurrentRoom().getName());
     }
     
+    /**
+     * Returns the room where the player is currently present 
+     */
     public Room getCurrentRoom() {
         return currentRoom;
     }
@@ -164,7 +172,12 @@ public class Game {
             }
         }
     }
-
+    
+    /** 
+     * This function is called when the players selects an item to take
+     * handles the empty take command as well
+     * successful operation results in inventory update of player with the selected item
+     */
     private void takeItem(Command command) {
         if (!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
@@ -188,7 +201,10 @@ public class Game {
             //System.out.println(currentRoom.getLongDescription());
         }
     }
-
+    
+    /**
+     * Drops a selected item from the selection while playing the game
+     */
     private void dropItem(Command command) {
         if (!command.hasSecondWord()) {
             // if there is no second word, we don't know where to go...
@@ -213,6 +229,10 @@ public class Game {
         }
     }
 
+    /**
+     * This is the function to consume an item from inventory
+     * If no item is found then it gives appropriate message
+     */
     private void useItem(Command command) // use key
     {
         if (!command.hasSecondWord()) {

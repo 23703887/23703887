@@ -5,28 +5,38 @@ import java.util.ArrayList;
 
 
 /**
- * Write a description of class Player here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * This class is part of the "World of Zuul" application. 
+ * "World of Zuul" is a very simple, text based adventure game.  
+ * 
+ * This class holds information about the player who is playing the game
+ * A player can have a list of items that he owns while playing the game
+ * 
+ * The way this is used: Players start the game and start adding stuff to their inventory
+ * It also allows players to delete objects from their inventory
+ * This also allows players to display their whole inventory or get a specific item from their inventory
+ * 
+ * @author Ritika Saini
+ * @version 1.0
  */
 public class Player
 {
     
+    // List to hold the items of player
     private ArrayList<Item> playerItem;
     
+    /**
+     * Constructor to initialize player's objects
+     */
     public Player()
     {
         playerItem = new ArrayList();
     }
     
     /**
-    * Write a description of class Player here.
+    * This method adds the item that is passed from the main to add in the inventory.
     *
-    * @param (your name)
-    * @return (a version number or a date)
-    * @exception (a version number or a date)
-    * @see (a version number or a date)
+    * @param item Item that is needed to be added
+    * @return nothing
     */
     
     public void addItemInventory(Item item){
@@ -35,11 +45,23 @@ public class Player
         //System.out.println(item.getDescription() + " was removed from the room"); // add extra information to inform user that the item has been taken
     }
 
+    /**
+    * This method removes the item from the inventory.
+    *
+    * @param item Item that is needed to be removed
+    * @return nothing
+    */
     public void removeItemInventory(Item item){
         playerItem.remove(item);
         System.out.println(item.getName() + " was removed from your inventory");
     }
     
+    /**
+    * This method returns the item that is requested by player
+    *
+    * @param stringItem Item name that is needed to search the item in inventory
+    * @return itemToReturn Item that is requested by player
+    */
     public Item getPlayerItem(String stringItem){
         Item itemToReturn = null;
         for(Item item: playerItem){
@@ -50,6 +72,12 @@ public class Player
         return itemToReturn;
     }
     
+    /**
+    * This method prints the whole inventory of a player
+    *
+    * @param none
+    * @return none
+    */
     public String printAllInventory(){
 
         String returnString = "Items:";
