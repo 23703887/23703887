@@ -75,4 +75,44 @@ public class Item
     public int getPower(){
         return destructivePower;
     }
+
+    /**
+     * @return returns the healingPower of an item 
+     */
+    public double getHealingPower(){
+        return healingPower;
+    }
+
+    /** 
+     * updates/set the name of an item
+     * @param inpName
+     */
+    public String setName(string inpName){
+        name = inpName;
+    }
+    
+    /** 
+     * updates/set the description of an item
+     * @param inpDescription
+     */
+    public String setDescription(string inpDescription){
+        description = inpDescription;
+    }
+    
+    /**
+     * updates/set the destructivePower of an item
+     * @param inpdestructivePower 
+     */
+    public int setPower(int inpdestructivePower){
+        destructivePower = inpdestructivePower;
+    }
+
+    /**
+     * updates/set the healingPower of an item
+     * @param inphealingPower
+     */
+    public int setHealingPower(double healingPower){
+        healingPower = inphealingPower;
+    }
+    
 }

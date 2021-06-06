@@ -68,5 +68,14 @@ public class ItemCreation
         return itemToReturn;
     }
   
+    /**
+     * This functiond adds an item in the list of items that are already present in the game
+     * 
+     * @param itemObject the object of Item class that needs to be added in the list
+     */
+    public void addItem(Item itemObject)
+    {
+        allItemsInGame.add(itemObject)
+    }
     
 }

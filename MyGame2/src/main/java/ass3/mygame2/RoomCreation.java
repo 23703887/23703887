@@ -78,4 +78,14 @@ public class RoomCreation {
         return roomToReturn;
     }
 
+    /**
+     * This functiond adds a room in the list of rooms that are already present in the game
+     * 
+     * @param roomObject the object of Room class that needs to be added in the list
+     */
+    public void addRoom(Room roomObject)
+    {
+        allRoomInGame.add(roomObject)
+    }
+
 }
