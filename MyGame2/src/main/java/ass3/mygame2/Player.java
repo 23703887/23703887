@@ -20,7 +20,8 @@ import java.util.ArrayList;
  */
 public class Player
 {
-    
+    // Player Name
+    public String playerName;
     // List to hold the items of player
     private ArrayList<Item> playerItem;
     
@@ -30,6 +31,7 @@ public class Player
     public Player()
     {
         playerItem = new ArrayList();
+        playerName = 'Dummy123';
     }
     
     /**
@@ -87,5 +89,20 @@ public class Player
         return returnString;
     }
 
+    /**
+     * This method sets the player name who is playing the game
+     * @param inpPlayerName
+     */
+    public void setName(String inpPlayerName){
+        name = inpPlayerName;
+    }
+
+    /**
+     * This method returns the player name 
+     * @return name of the player
+     */
+    public String getName(){
+        return name;
+    }
     
 }

@@ -8,6 +8,7 @@ package ass3.mygame2;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.*;
 
 /**
  * This class is the main driver class of game "World of Zuul"
@@ -41,6 +42,11 @@ public class Game {
         timeCounter = 50;
         parser = new Parser();
         player = new Player();
+        System.out.println("Please Enter Player Name: ");
+        Scanner sc= new Scanner(System.in);
+        String playerName= sc.nextLine();
+        player.setName(playerName);
+        System.out.println("Welcome "+ player.getName() +" to World of Zuul")
         rooms = new RoomCreation();
         currentRoom = rooms.getRoom("castle");  // start game outside
         //System.out.println(createRoom.getcurrentRoom().getName());
