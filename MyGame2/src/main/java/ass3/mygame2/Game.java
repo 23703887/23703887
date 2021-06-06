@@ -3,13 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ass3.mygame2;
+package mygame2;
 
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.*;
-
+import mygame2.Item;
+import mygame2.Room;
 /**
  * This class is the main driver class of game "World of Zuul"
  * This class holds all the objects that will be required for gameplay
@@ -46,7 +47,7 @@ public class Game {
         Scanner sc= new Scanner(System.in);
         String playerName= sc.nextLine();
         player.setName(playerName);
-        System.out.println("Welcome "+ player.getName() +" to World of Zuul")
+        System.out.println("Welcome "+ player.getName() +" to World of Zuul");
         rooms = new RoomCreation();
         currentRoom = rooms.getRoom("castle");  // start game outside
         //System.out.println(createRoom.getcurrentRoom().getName());
@@ -69,25 +70,25 @@ public class Game {
         // Enter the main command loop.  Here we repeatedly read commands and
         // execute them until the game is over.
         // Add new content in the game
-        magnusShield = new Item("magnusShield", "The exotic shield", 100);
-        magnusDagger = new Item("magnusDagger", "The exotic Dagger", 100);
-        magnusPotion = new Item("magnusPotion", "The royal Health formula", 50.50);
-        mainDoorkey1 = new Item("mainDoorkey1", "To open the main door of sub-castle", 100);
-        frontGatekey2 = new Item("frontGatekey2", "To open the frontgate of sub-castle", 100);
-        backDoorkey3 = new Item("backDoorkey3", "To Open the backdoor of sub-castle", 100);
-        subCastle = Room("Sub-Castle", "Castle within a castle, isn't that amazing?",TRUE);
+        Item magnusShield = new Item("magnusShield", "The exotic shield", 100);
+        Item magnusDagger = new Item("magnusDagger", "The exotic Dagger", 100);
+        Item magnusPotion = new Item("magnusPotion", "The royal Health formula", 50.50);
+        Item mainDoorkey1 = new Item("mainDoorkey1", "To open the main door of sub-castle", 100);
+        Item frontGatekey2 = new Item("frontGatekey2", "To open the frontgate of sub-castle", 100);
+        Item backDoorkey3 = new Item("backDoorkey3", "To Open the backdoor of sub-castle", 100);
+        Room subCastle = new Room("Sub-Castle", "Castle within a castle, isn't that amazing?",true);
 
         // Set the subcastle exit
-        subCastle.setExit("west", rooms.getRoom("kitchen"))
-        subCastle.addItemInRoom(magnusShield)
-        subCastle.addItemInRoom(magnusDagger)
-        subCastle.addItemInRoom(magnusPotion)
-        subCastle.addItemInRoom(mainDoorkey1)
-        subCastle.addItemInRoom(frontGatekey2)
-        subCastle.addItemInRoom(backDoorkey3)
+        subCastle.setExit("west", rooms.getRoom("kitchen"));
+        subCastle.addItemInRoom(magnusShield);
+        subCastle.addItemInRoom(magnusDagger);
+        subCastle.addItemInRoom(magnusPotion);
+        subCastle.addItemInRoom(mainDoorkey1);
+        subCastle.addItemInRoom(frontGatekey2);
+        subCastle.addItemInRoom(backDoorkey3);
 
         // add room in the game
-        rooms.addRoom(subCastle)
+        rooms.addRoom(subCastle);
         
         boolean finished = false;
         while (!finished) {

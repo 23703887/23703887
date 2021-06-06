@@ -1,4 +1,4 @@
-package ass3.mygame2;
+package mygame2;
 
 import java.util.Set;
 import java.util.HashMap;

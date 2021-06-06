@@ -1,4 +1,4 @@
-package ass3.mygame2;
+package mygame2;
 
 /**
  * This class is part of the "World of Zuul" application. 
@@ -85,7 +85,7 @@ public class RoomCreation {
      */
     public void addRoom(Room roomObject)
     {
-        allRoomInGame.add(roomObject)
+        allRoomInGame.add(roomObject);
     }
 
 }

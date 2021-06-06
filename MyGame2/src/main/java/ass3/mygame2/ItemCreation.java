@@ -1,4 +1,4 @@
-package ass3.mygame2;
+package mygame2;
 
 import java.util.ArrayList;
 
@@ -75,7 +75,7 @@ public class ItemCreation
      */
     public void addItem(Item itemObject)
     {
-        allItemsInGame.add(itemObject)
+        allItemsInGame.add(itemObject);
     }
     
 }

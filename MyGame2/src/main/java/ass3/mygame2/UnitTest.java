@@ -1,3 +1,4 @@
+package mygame2;
 /**
  * This class is to implement the unit testing to check the functionalities of classes
  * 
@@ -5,8 +6,10 @@
  * @version 1.0
  */
 
-import junit.framework.*;
 import org.junit.Test;
+
+import junit.framework.TestCase;
+
 import org.junit.Ignore;
 import static org.junit.Assert.assertEquals;
 
@@ -16,7 +19,7 @@ public class UnitTest extends TestCase {
     * 1 - Test method to test the item name set
     */
    public void testItemSet(){
-        excaliburSword = new Item("excaliburSword", "The legendary Excalibur", 100);
+        Item excaliburSword = new Item("excaliburSword", "The legendary Excalibur", 100);
         assertEquals(excaliburSword.getName(),"excaliburSword");
    }
 
@@ -24,7 +27,7 @@ public class UnitTest extends TestCase {
     * 2 - Test method to test the item set name method
     */
     public void testItemNameSet(String defaultName, String newName){
-        excaliburSword = new Item(defaultName, "The legendary Excalibur", 100);
+        Item excaliburSword = new Item(defaultName, "The legendary Excalibur", 100);
         excaliburSword.setName(newName);
         assertEquals(excaliburSword.getName(),newName);
    }
@@ -32,8 +35,8 @@ public class UnitTest extends TestCase {
    /**
     * 3 - Test method to test the item set description method
     */
-    public void testItemNameSet(String defaultdescription, String newdescription){
-        excaliburSword = new Item("excaliburSword", defaultdescription, 100);
+    public void testItemDescriptionSet(String defaultdescription, String newdescription){
+        Item excaliburSword = new Item("excaliburSword", defaultdescription, 100);
         excaliburSword.setDescription(newdescription);
         assertEquals(excaliburSword.getDescription(),newdescription);
    }
@@ -42,7 +45,7 @@ public class UnitTest extends TestCase {
     * 4 - Test method to test the item destructivePower set
     */
     public void testItemPowerSet(int defaultPower, int newPower){
-        excaliburSword = new Item("excaliburSword", "The legendary Excalibur", defaultPower);
+        Item excaliburSword = new Item("excaliburSword", "The legendary Excalibur", defaultPower);
         excaliburSword.setPower(newPower);
         assertEquals(excaliburSword.getPower(),newPower);
    }
@@ -51,7 +54,7 @@ public class UnitTest extends TestCase {
     * 5 - Test method to test the item healingPower set
     */
     public void testItemPowerSet(double defaultHealingPower, double newHealingPower){
-        excaliburSword = new Item("excaliburSword", "The legendary Excalibur", defaultHealingPower);
+        Item excaliburSword = new Item("excaliburSword", "The legendary Excalibur", defaultHealingPower);
         excaliburSword.setHealingPower(newHealingPower);
         assertEquals(excaliburSword.getHealingPower(),newHealingPower);
    }
@@ -60,7 +63,7 @@ public class UnitTest extends TestCase {
     * 6 - Test method to test the room set method
     */
     public void testRoomSet(){
-        subCastle = new Room("subcastle", "You are at the subcastle", false);
+        Room subCastle = new Room("subcastle", "You are at the subcastle", false);
         assertEquals(subCastle.getName(),"subcastle");
    }
 }

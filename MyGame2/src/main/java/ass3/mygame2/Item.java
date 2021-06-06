@@ -1,5 +1,5 @@
 
-package ass3.mygame2;
+package mygame2;
 /**
  * This class is part of the "World of Zuul" application. 
  * "World of Zuul" is a very simple, text based adventure game.  
@@ -87,7 +87,7 @@ public class Item
      * updates/set the name of an item
      * @param inpName
      */
-    public String setName(string inpName){
+    public void setName(String inpName){
         name = inpName;
     }
     
@@ -95,7 +95,7 @@ public class Item
      * updates/set the description of an item
      * @param inpDescription
      */
-    public String setDescription(string inpDescription){
+    public void setDescription(String inpDescription){
         description = inpDescription;
     }
     
@@ -103,7 +103,7 @@ public class Item
      * updates/set the destructivePower of an item
      * @param inpdestructivePower 
      */
-    public int setPower(int inpdestructivePower){
+    public void setPower(int inpdestructivePower){
         destructivePower = inpdestructivePower;
     }
 
@@ -111,8 +111,8 @@ public class Item
      * updates/set the healingPower of an item
      * @param inphealingPower
      */
-    public int setHealingPower(double healingPower){
-        healingPower = inphealingPower;
+    public void setHealingPower(double healingPower){
+        healingPower = healingPower;
     }
     
 }

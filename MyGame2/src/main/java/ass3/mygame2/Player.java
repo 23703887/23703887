@@ -1,4 +1,4 @@
-package ass3.mygame2;
+package mygame2;
 
 
 import java.util.ArrayList;
@@ -31,7 +31,7 @@ public class Player
     public Player()
     {
         playerItem = new ArrayList();
-        playerName = 'Dummy123';
+        playerName = "Dummy123";
     }
     
     /**
@@ -94,7 +94,7 @@ public class Player
      * @param inpPlayerName
      */
     public void setName(String inpPlayerName){
-        name = inpPlayerName;
+    	playerName = inpPlayerName;
     }
 
     /**
@@ -102,7 +102,7 @@ public class Player
      * @return name of the player
      */
     public String getName(){
-        return name;
+        return playerName;
     }
     
 }
